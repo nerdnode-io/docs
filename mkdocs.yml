@@ -1,17 +1,21 @@
 site_name: Nerdnode
+repo_url: https://github.com/nerdnode-io/docs
 theme:
   name: material
   features:
     - navigation.tabs
     - navigation.sections
-    - toc.integrate
     - navigation.top
+    - navigation.footer
+    - toc.integrate
     - search.suggest
     - search.highlight
     - content.tabs.link
     - content.code.annotation
     - content.code.copy
   language: en
+  icon:
+    repo: fontawesome/brands/git-alt
   palette:
     - scheme: default
       toggle:
@@ -25,7 +29,14 @@ theme:
         name: Switch to light mode
       primary: teal
       accent: lime
-  
+
+plugins:
+  - git-revision-date-localized:
+      enable_creation_date: true
+  - git-committers:
+      repository: squidfunk/mkdocs-material
+      branch: main
+
 extra:
   social:
     - icon: fontawesome/brands/github-alt
