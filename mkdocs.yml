@@ -3,8 +3,15 @@ repo_url: https://github.com/nerdnode-io/docs
 theme:
   name: material
   features:
+    - navigation.instant
+    - navigation.instant.prefetch
+    - navigation.instant.progress
+    - navigation.tracking
     - navigation.tabs
+    - navigation.tabs.sticky
     - navigation.sections
+    - navigation.prune
+    - navigation.indexes
     - navigation.top
     - navigation.footer
     - toc.integrate
@@ -12,6 +19,7 @@ theme:
     - search.highlight
     - content.tabs.link
     - content.code.annotation
+    - content.code.select
     - content.code.copy
   language: en
   icon:
@@ -37,6 +45,13 @@ plugins:
       enabled: !ENV [CI, false]
       repository: squidfunk/mkdocs-material
       branch: main
+
+markdown_extensions: 
+  - attr_list
+  - md_in_html
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
 
 extra:
   social:
